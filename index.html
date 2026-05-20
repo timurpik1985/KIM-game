@@ -141,58 +141,58 @@ var vh=function(){document.documentElement.style.setProperty('--vh',(window.inne
 vh();window.addEventListener('resize',vh);window.addEventListener('orientationchange',vh);
 
 var HEBREW_LETTERS=[
-  {display:'א', he:'אָלֶף',                 speak:'אָלֶף',             lang:'he-IL'},
-  {display:'ב', he:'בֵּית',                  speak:'בֵּית',              lang:'he-IL'},
-  {display:'ג', he:'גִּימֶל',                speak:'גִּימֶל',            lang:'he-IL'},
-  {display:'ד', he:'דָּלֶת',                 speak:'דָּלֶת',             lang:'he-IL'},
-  {display:'ה', he:'הֵא',                    speak:'הֵא',                lang:'he-IL'},
-  {display:'ו', he:'וָו',                    speak:'וָו',                lang:'he-IL'},
-  {display:'ז', he:'זַיִן',                  speak:'זַיִן',              lang:'he-IL'},
-  {display:'ח', he:'חֵית',                   speak:'חֵית',               lang:'he-IL'},
-  {display:'ט', he:'טֵית',                   speak:'טֵית',               lang:'he-IL'},
-  {display:'י', he:'יוֹד',                   speak:'יוֹד',               lang:'he-IL'},
-  {display:'כ', he:'כַּף',                   speak:'כַּף',               lang:'he-IL'},
-  {display:'ך', he:'כַּף סוֹפִית',           speak:'כַּף סוֹפִית',       lang:'he-IL'},
-  {display:'ל', he:'לָמֶד',                  speak:'לָמֶד',              lang:'he-IL'},
-  {display:'מ', he:'מֵם',                    speak:'מֵם',                lang:'he-IL'},
-  {display:'ם', he:'מֵם סוֹפִית',            speak:'מֵם סוֹפִית',        lang:'he-IL'},
-  {display:'נ', he:'נוּן',                   speak:'נוּן',               lang:'he-IL'},
-  {display:'ן', he:'נוּן סוֹפִית',           speak:'נוּן סוֹפִית',       lang:'he-IL'},
-  {display:'ס', he:'סָמֶךְ',                 speak:'סָמֶךְ',             lang:'he-IL'},
-  {display:'ע', he:'עַיִן',                  speak:'עַיִן',              lang:'he-IL'},
-  {display:'פ', he:'פֵּא',                   speak:'פֵּא',               lang:'he-IL'},
-  {display:'ף', he:'פֵּא סוֹפִית',           speak:'פֵּא סוֹפִית',       lang:'he-IL'},
-  {display:'צ', he:'צַדִּי',                 speak:'צַדִּי',             lang:'he-IL'},
-  {display:'ץ', he:'צַדִּי סוֹפִית',         speak:'צַדִּי סוֹפִית',     lang:'he-IL'},
-  {display:'ק', he:'קוֹף',                   speak:'קוֹף',               lang:'he-IL'},
-  {display:'ר', he:'רֵישׁ',                  speak:'רֵישׁ',              lang:'he-IL'},
-  {display:'ש', he:'שִׁין',                  speak:'שִׁין',              lang:'he-IL'},
-  {display:'ת', he:'תָּו',                   speak:'תָּו',               lang:'he-IL'}
+  {display:'א', he:'אָלֶף',       speak:'הָאוֹת אָלֶף',           gt:'הָאוֹת אָלֶף',           lang:'he-IL'},
+  {display:'ב', he:'בֵּית',        speak:'הָאוֹת בֵּית',            gt:'הָאוֹת בֵּית',            lang:'he-IL'},
+  {display:'ג', he:'גִּימֶל',      speak:'הָאוֹת גִּימֶל',          gt:'הָאוֹת גִּימֶל',          lang:'he-IL'},
+  {display:'ד', he:'דָּלֶת',       speak:'הָאוֹת דָּלֶת',           gt:'הָאוֹת דָּלֶת',           lang:'he-IL'},
+  {display:'ה', he:'הֵא',          speak:'הָאוֹת הֵא',              gt:'הָאוֹת הֵא',              lang:'he-IL'},
+  {display:'ו', he:'וָו',          speak:'הָאוֹת וָו',              gt:'הָאוֹת וָו',              lang:'he-IL'},
+  {display:'ז', he:'זַיִן',        speak:'הָאוֹת זַיִן',            gt:'הָאוֹת זַיִן',            lang:'he-IL'},
+  {display:'ח', he:'חֵית',         speak:'הָאוֹת חֵית',             gt:'הָאוֹת חֵית',             lang:'he-IL'},
+  {display:'ט', he:'טֵית',         speak:'הָאוֹת טֵית',             gt:'הָאוֹת טֵית',             lang:'he-IL'},
+  {display:'י', he:'יוֹד',         speak:'הָאוֹת יוֹד',             gt:'הָאוֹת יוֹד',             lang:'he-IL'},
+  {display:'כ', he:'כַּף',         speak:'הָאוֹת כַּף',             gt:'הָאוֹת כַּף',             lang:'he-IL'},
+  {display:'ך', he:'כַּף סוֹפִית', speak:'הָאוֹת כַּף סוֹפִית',     gt:'הָאוֹת כַּף סוֹפִית',     lang:'he-IL'},
+  {display:'ל', he:'לָמֶד',        speak:'הָאוֹת לָמֶד',            gt:'הָאוֹת לָמֶד',            lang:'he-IL'},
+  {display:'מ', he:'מֵם',          speak:'הָאוֹת מֵם',              gt:'הָאוֹת מֵם',              lang:'he-IL'},
+  {display:'ם', he:'מֵם סוֹפִית',  speak:'הָאוֹת מֵם סוֹפִית',      gt:'הָאוֹת מֵם סוֹפִית',      lang:'he-IL'},
+  {display:'נ', he:'נוּן',         speak:'הָאוֹת נוּן',             gt:'הָאוֹת נוּן',             lang:'he-IL'},
+  {display:'ן', he:'נוּן סוֹפִית', speak:'הָאוֹת נוּן סוֹפִית',     gt:'הָאוֹת נוּן סוֹפִית',     lang:'he-IL'},
+  {display:'ס', he:'סָמֶךְ',       speak:'הָאוֹת סָמֶךְ',           gt:'הָאוֹת סָמֶךְ',           lang:'he-IL'},
+  {display:'ע', he:'עַיִן',        speak:'הָאוֹת עַיִן',            gt:'הָאוֹת עַיִן',            lang:'he-IL'},
+  {display:'פ', he:'פֵּא',         speak:'הָאוֹת פֵּא',             gt:'הָאוֹת פֵּא',             lang:'he-IL'},
+  {display:'ף', he:'פֵּא סוֹפִית', speak:'הָאוֹת פֵּא סוֹפִית',     gt:'הָאוֹת פֵּא סוֹפִית',     lang:'he-IL'},
+  {display:'צ', he:'צַדִּי',       speak:'הָאוֹת צַדִּי',           gt:'הָאוֹת צַדִּי',           lang:'he-IL'},
+  {display:'ץ', he:'צַדִּי סוֹפִית', speak:'הָאוֹת צַדִּי סוֹפִית', gt:'הָאוֹת צַדִּי סוֹפִית',   lang:'he-IL'},
+  {display:'ק', he:'קוֹף',         speak:'הָאוֹת קוֹף',             gt:'הָאוֹת קוֹף',             lang:'he-IL'},
+  {display:'ר', he:'רֵישׁ',        speak:'הָאוֹת רֵישׁ',            gt:'הָאוֹת רֵישׁ',            lang:'he-IL'},
+  {display:'ש', he:'שִׁין',        speak:'הָאוֹת שִׁין',            gt:'הָאוֹת שִׁין',            lang:'he-IL'},
+  {display:'ת', he:'תָּו',         speak:'הָאוֹת תָּו',             gt:'הָאוֹת תָּו',             lang:'he-IL'}
 ];
 
 var ENGLISH_LETTERS='ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(function(c){return{display:c,name:c,speak:c};});
 
 var HEBREW_NUMBERS=[
-  {num:1,  he:'אֶחָד',                   speak:'אֶחָד',                   display:'1',  lang:'he-IL'},
-  {num:2,  he:'שְתַּיִם',                 speak:'שְתַּיִם',                 display:'2',  lang:'he-IL'},
-  {num:3,  he:'שָׁלוֹשׁ',                 speak:'שָׁלוֹשׁ',                 display:'3',  lang:'he-IL'},
-  {num:4,  he:'אַרְבַּע',                 speak:'אַרְבַּע',                 display:'4',  lang:'he-IL'},
-  {num:5,  he:'חָמֵשׁ',                   speak:'חָמֵשׁ',                   display:'5',  lang:'he-IL'},
-  {num:6,  he:'שֵׁשׁ',                    speak:'שֵׁשׁ',                    display:'6',  lang:'he-IL'},
-  {num:7,  he:'שֶׁבַע',                   speak:'שֶׁבַע',                   display:'7',  lang:'he-IL'},
-  {num:8,  he:'שְׁמוֹנֶה',                speak:'שְׁמוֹנֶה',                display:'8',  lang:'he-IL'},
-  {num:9,  he:'תֵּשַׁע',                  speak:'תֵּשַׁע',                  display:'9',  lang:'he-IL'},
-  {num:10, he:'עֶשֶׂר',                   speak:'עֶשֶׂר',                   display:'10', lang:'he-IL'},
-  {num:11, he:'אַחַד עָשָׂר',             speak:'אַחַד עָשָׂר',             display:'11', lang:'he-IL'},
-  {num:12, he:'שְׁנֵים עָשָׂר',           speak:'שְׁנֵים עָשָׂר',           display:'12', lang:'he-IL'},
-  {num:13, he:'שְׁלוֹשָׁה עָשָׂר',        speak:'שְׁלוֹשָׁה עָשָׂר',        display:'13', lang:'he-IL'},
-  {num:14, he:'אַרְבָּעָה עָשָׂר',        speak:'אַרְבָּעָה עָשָׂר',        display:'14', lang:'he-IL'},
-  {num:15, he:'חֲמִשָּׁה עָשָׂר',         speak:'חֲמִשָּׁה עָשָׂר',         display:'15', lang:'he-IL'},
-  {num:16, he:'שִׁשָּׁה עָשָׂר',          speak:'שִׁשָּׁה עָשָׂר',          display:'16', lang:'he-IL'},
-  {num:17, he:'שִׁבְעָה עָשָׂר',          speak:'שִׁבְעָה עָשָׂר',          display:'17', lang:'he-IL'},
-  {num:18, he:'שְׁמוֹנָה עָשָׂר',         speak:'שְׁמוֹנָה עָשָׂר',         display:'18', lang:'he-IL'},
-  {num:19, he:'תִּשְׁעָה עָשָׂר',         speak:'תִּשְׁעָה עָשָׂר',         display:'19', lang:'he-IL'},
-  {num:20, he:'עֶשְׂרִים',                speak:'עֶשְׂרִים',                display:'20', lang:'he-IL'}
+  {num:1,  he:'אַחַת',                 speak:'הַמִּסְפָּר אַחַת',                 gt:'הַמִּסְפָּר אַחַת',                 display:'1',  lang:'he-IL'},
+  {num:2,  he:'שְׁתַּיִם',             speak:'הַמִּסְפָּר שְׁתַּיִם',             gt:'הַמִּסְפָּר שְׁתַּיִם',             display:'2',  lang:'he-IL'},
+  {num:3,  he:'שָׁלוֹשׁ',              speak:'הַמִּסְפָּר שָׁלוֹשׁ',              gt:'הַמִּסְפָּר שָׁלוֹשׁ',              display:'3',  lang:'he-IL'},
+  {num:4,  he:'אַרְבַּע',              speak:'הַמִּסְפָּר אַרְבַּע',              gt:'הַמִּסְפָּר אַרְבַּע',              display:'4',  lang:'he-IL'},
+  {num:5,  he:'חָמֵשׁ',                speak:'הַמִּסְפָּר חָמֵשׁ',                gt:'הַמִּסְפָּר חָמֵשׁ',                display:'5',  lang:'he-IL'},
+  {num:6,  he:'שֵׁשׁ',                 speak:'הַמִּסְפָּר שֵׁשׁ',                 gt:'הַמִּסְפָּר שֵׁשׁ',                 display:'6',  lang:'he-IL'},
+  {num:7,  he:'שֶׁבַע',                speak:'הַמִּסְפָּר שֶׁבַע',                gt:'הַמִּסְפָּר שֶׁבַע',                display:'7',  lang:'he-IL'},
+  {num:8,  he:'שְׁמוֹנֶה',             speak:'הַמִּסְפָּר שְׁמוֹנֶה',             gt:'הַמִּסְפָּר שְׁמוֹנֶה',             display:'8',  lang:'he-IL'},
+  {num:9,  he:'תֵּשַׁע',               speak:'הַמִּסְפָּר תֵּשַׁע',               gt:'הַמִּסְפָּר תֵּשַׁע',               display:'9',  lang:'he-IL'},
+  {num:10, he:'עֶשֶׂר',                speak:'הַמִּסְפָּר עֶשֶׂר',                gt:'הַמִּסְפָּר עֶשֶׂר',                display:'10', lang:'he-IL'},
+  {num:11, he:'אַחַת עֶשְׂרֵה',        speak:'הַמִּסְפָּר אַחַת עֶשְׂרֵה',        gt:'הַמִּסְפָּר אַחַת עֶשְׂרֵה',        display:'11', lang:'he-IL'},
+  {num:12, he:'שְׁתֵּים עֶשְׂרֵה',     speak:'הַמִּסְפָּר שְׁתֵּים עֶשְׂרֵה',     gt:'הַמִּסְפָּר שְׁתֵּים עֶשְׂרֵה',     display:'12', lang:'he-IL'},
+  {num:13, he:'שְׁלוֹשׁ עֶשְׂרֵה',     speak:'הַמִּסְפָּר שְׁלוֹשׁ עֶשְׂרֵה',     gt:'הַמִּסְפָּר שְׁלוֹשׁ עֶשְׂרֵה',     display:'13', lang:'he-IL'},
+  {num:14, he:'אַרְבַּע עֶשְׂרֵה',     speak:'הַמִּסְפָּר אַרְבַּע עֶשְׂרֵה',     gt:'הַמִּסְפָּר אַרְבַּע עֶשְׂרֵה',     display:'14', lang:'he-IL'},
+  {num:15, he:'חֲמֵשׁ עֶשְׂרֵה',       speak:'הַמִּסְפָּר חֲמֵשׁ עֶשְׂרֵה',       gt:'הַמִּסְפָּר חֲמֵשׁ עֶשְׂרֵה',       display:'15', lang:'he-IL'},
+  {num:16, he:'שֵׁשׁ עֶשְׂרֵה',        speak:'הַמִּסְפָּר שֵׁשׁ עֶשְׂרֵה',        gt:'הַמִּסְפָּר שֵׁשׁ עֶשְׂרֵה',        display:'16', lang:'he-IL'},
+  {num:17, he:'שְׁבַע עֶשְׂרֵה',       speak:'הַמִּסְפָּר שְׁבַע עֶשְׂרֵה',       gt:'הַמִּסְפָּר שְׁבַע עֶשְׂרֵה',       display:'17', lang:'he-IL'},
+  {num:18, he:'שְׁמוֹנֶה עֶשְׂרֵה',    speak:'הַמִּסְפָּר שְׁמוֹנֶה עֶשְׂרֵה',    gt:'הַמִּסְפָּר שְׁמוֹנֶה עֶשְׂרֵה',    display:'18', lang:'he-IL'},
+  {num:19, he:'תְּשַׁע עֶשְׂרֵה',      speak:'הַמִּסְפָּר תְּשַׁע עֶשְׂרֵה',      gt:'הַמִּסְפָּר תְּשַׁע עֶשְׂרֵה',      display:'19', lang:'he-IL'},
+  {num:20, he:'עֶשְׂרִים',             speak:'הַמִּסְפָּר עֶשְׂרִים',             gt:'הַמִּסְפָּר עֶשְׂרִים',             display:'20', lang:'he-IL'}
 ];
 
 var PRAISE=[
@@ -258,32 +258,60 @@ function playWrong(){var ctx=getACtx();if(!ctx)return;var n=ctx.currentTime;play
 function playMastery(){var ctx=getACtx();if(!ctx)return;var n=ctx.currentTime;playNote(523,n,0.18,'triangle',0.28);playNote(659,n+0.13,0.18,'triangle',0.28);playNote(784,n+0.26,0.18,'triangle',0.28);playNote(1046,n+0.39,0.35,'triangle',0.32);playNote(1319,n+0.50,0.45,'triangle',0.28);}
 
 var voices=[];
-function loadVoices(){voices=window.speechSynthesis?window.speechSynthesis.getVoices():[];}
-if(window.speechSynthesis){loadVoices();window.speechSynthesis.onvoiceschanged=loadVoices;}
-function findVoice(lang){
-  var wanted=(lang||'').toLowerCase();
-  var primary=wanted.split('-')[0];
-  for(var i=0;i<voices.length;i++){
-    var vLang=(voices[i].lang||'').toLowerCase();
-    if(vLang===wanted)return voices[i];
-  }
-  for(var j=0;j<voices.length;j++){
-    var vLang2=(voices[j].lang||'').toLowerCase();
-    if(vLang2.indexOf(primary)===0)return voices[j];
-  }
-  return null;
+var voicesLoadedOnce=false;
+function loadVoices(){
+  voices=window.speechSynthesis?window.speechSynthesis.getVoices():[];
+  voicesLoadedOnce=voices.length>0;
 }
-function speak(text,lang,doneCb){
+if(window.speechSynthesis){loadVoices();window.speechSynthesis.onvoiceschanged=loadVoices;}
+
+function normalizeHebrewForValidation(s){
+  return String(s||'')
+    .replace(/[֑-ׇ]/g,'')
+    .replace(/[״"׳'`\s\-]/g,'')
+    .trim();
+}
+
+function findVoice(lang){
+  var wanted=(lang||'he-IL').toLowerCase();
+  var primary=wanted.split('-')[0];
+  var hebrewNameHints=['hebrew','עברית','carmit','avri','he-il','he_il'];
+  function scoreVoice(v){
+    var score=0;
+    var vLang=(v.lang||'').toLowerCase();
+    var vName=(v.name||'').toLowerCase();
+    if(vLang===wanted)score+=100;
+    else if(vLang.indexOf(primary)===0)score+=70;
+    if(v.localService)score+=10;
+    for(var i=0;i<hebrewNameHints.length;i++)if(vName.indexOf(hebrewNameHints[i])>=0)score+=20;
+    return score;
+  }
+  var best=null,bestScore=0;
+  for(var i=0;i<voices.length;i++){
+    var s=scoreVoice(voices[i]);
+    if(s>bestScore){best=voices[i];bestScore=s;}
+  }
+  return bestScore>=70?best:null;
+}
+
+function speak(text,lang,doneCb,tryCount){
   if(!window.speechSynthesis){if(doneCb)doneCb();return;}
+  lang=lang||'he-IL';
+  if(!voicesLoadedOnce&&(!voices||voices.length===0)&&(tryCount||0)<10){
+    loadVoices();
+    setTimeout(function(){speak(text,lang,doneCb,(tryCount||0)+1);},120);
+    return;
+  }
   window.speechSynthesis.cancel();
   var u=new SpeechSynthesisUtterance(text);
-  u.lang=lang||'he-IL';
+  u.lang=lang;
   var isHebrew=(u.lang||'').toLowerCase().indexOf('he')===0;
-  u.rate=isHebrew?0.72:0.82;
-  u.pitch=isHebrew?1.0:1.05;
+  u.rate=isHebrew?0.66:0.82;
+  u.pitch=isHebrew?0.96:1.05;
   u.volume=1;
   var v=findVoice(u.lang);
   if(v)u.voice=v;
+  if(isHebrew&&!v)console.warn('No Hebrew he-IL voice found. Browser will use a fallback voice, so pronunciation may not be perfect.');
   u.onend=function(){if(doneCb)doneCb();};
   u.onerror=function(){if(doneCb)doneCb();};
   window.speechSynthesis.speak(u);
@@ -294,6 +322,30 @@ function speakCurrent(){
   var done=function(){speakBtn.classList.remove('speaking');};
   speak(currentItem.speak,currentItem.lang||'he-IL',done);
 }
+
+function validatePronunciationGroundTruth(){
+  var errors=[];
+  function validateList(list,type,keyField){
+    var seen={};
+    for(var i=0;i<list.length;i++){
+      var item=list[i];
+      var key=String(item[keyField]);
+      if(seen[key])errors.push(type+' duplicate key '+key);
+      seen[key]=true;
+      if(item.lang!=='he-IL')errors.push(type+' '+key+' is not he-IL');
+      if(!item.speak||!item.gt)errors.push(type+' '+key+' missing speak/gt');
+      if(normalizeHebrewForValidation(item.speak)!==normalizeHebrewForValidation(item.gt)){
+        errors.push(type+' '+key+' speak does not match ground truth: '+item.speak+' != '+item.gt);
+      }
+    }
+  }
+  validateList(HEBREW_LETTERS,'letter','display');
+  validateList(HEBREW_NUMBERS,'number','num');
+  if(HEBREW_LETTERS.length!==27)errors.push('Expected 27 Hebrew letter entries, got '+HEBREW_LETTERS.length);
+  if(HEBREW_NUMBERS.length!==20)errors.push('Expected 20 Hebrew number entries, got '+HEBREW_NUMBERS.length);
+  return {passed:errors.length===0,total:HEBREW_LETTERS.length+HEBREW_NUMBERS.length,errors:errors};
+}
+window.validatePronunciationGroundTruth=validatePronunciationGroundTruth;
 
 function dropOne(emoji,isSvg,colorFilter,big){
   var p=document.createElement('div');
@@ -468,7 +520,7 @@ for(var mi=0;mi<modeBtns.length;mi++){
   })(modeBtns[mi]);
 }
 
-function boot(){setMode(1);buildQueue();updateStats();updateProgress();newQuestion();}
+function boot(){var v=validatePronunciationGroundTruth();if(v.passed){console.log('Pronunciation E2E validation passed:',v.total,'items');}else{console.error('Pronunciation E2E validation failed:',v.errors);}setMode(1);buildQueue();updateStats();updateProgress();newQuestion();}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 </script>
 </body>
