@@ -170,7 +170,34 @@ var HEBREW_LETTERS=[
   {display:'ת', he:'תָּו',         speak:'הָאוֹת תָּו',             gt:'הָאוֹת תָּו',             lang:'he-IL'}
 ];
 
-var ENGLISH_LETTERS='ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(function(c){return{display:c,name:c,speak:c};});
+var ENGLISH_LETTERS=[
+  {display:'A', name:'A', speak:'ay',         gt:'ay',         lang:'en-US'},
+  {display:'B', name:'B', speak:'bee',        gt:'bee',        lang:'en-US'},
+  {display:'C', name:'C', speak:'see',        gt:'see',        lang:'en-US'},
+  {display:'D', name:'D', speak:'dee',        gt:'dee',        lang:'en-US'},
+  {display:'E', name:'E', speak:'ee',         gt:'ee',         lang:'en-US'},
+  {display:'F', name:'F', speak:'ef',         gt:'ef',         lang:'en-US'},
+  {display:'G', name:'G', speak:'jee',        gt:'jee',        lang:'en-US'},
+  {display:'H', name:'H', speak:'aitch',      gt:'aitch',      lang:'en-US'},
+  {display:'I', name:'I', speak:'eye',        gt:'eye',        lang:'en-US'},
+  {display:'J', name:'J', speak:'jay',        gt:'jay',        lang:'en-US'},
+  {display:'K', name:'K', speak:'kay',        gt:'kay',        lang:'en-US'},
+  {display:'L', name:'L', speak:'el',         gt:'el',         lang:'en-US'},
+  {display:'M', name:'M', speak:'em',         gt:'em',         lang:'en-US'},
+  {display:'N', name:'N', speak:'en',         gt:'en',         lang:'en-US'},
+  {display:'O', name:'O', speak:'oh',         gt:'oh',         lang:'en-US'},
+  {display:'P', name:'P', speak:'pee',        gt:'pee',        lang:'en-US'},
+  {display:'Q', name:'Q', speak:'cue',        gt:'cue',        lang:'en-US'},
+  {display:'R', name:'R', speak:'ar',         gt:'ar',         lang:'en-US'},
+  {display:'S', name:'S', speak:'ess',        gt:'ess',        lang:'en-US'},
+  {display:'T', name:'T', speak:'tee',        gt:'tee',        lang:'en-US'},
+  {display:'U', name:'U', speak:'you',        gt:'you',        lang:'en-US'},
+  {display:'V', name:'V', speak:'vee',        gt:'vee',        lang:'en-US'},
+  {display:'W', name:'W', speak:'double you', gt:'double you', lang:'en-US'},
+  {display:'X', name:'X', speak:'ex',         gt:'ex',         lang:'en-US'},
+  {display:'Y', name:'Y', speak:'why',        gt:'why',        lang:'en-US'},
+  {display:'Z', name:'Z', speak:'zed',        gt:'zed',        lang:'en-US'}
+];
 
 var HEBREW_NUMBERS=[
   {num:1,  he:'אַחַת',                 speak:'הַמִּסְפָּר אַחַת',                 gt:'הַמִּסְפָּר אַחַת',                 display:'1',  lang:'he-IL'},
@@ -341,9 +368,17 @@ function validatePronunciationGroundTruth(){
   }
   validateList(HEBREW_LETTERS,'letter','display');
   validateList(HEBREW_NUMBERS,'number','num');
+  for(var e=0;e<ENGLISH_LETTERS.length;e++){
+    var en=ENGLISH_LETTERS[e];
+    if(en.lang!=='en-US')errors.push('English letter '+en.display+' is not en-US');
+    if(!en.speak||!en.gt)errors.push('English letter '+en.display+' missing speak/gt');
+    if(en.speak!==en.gt)errors.push('English letter '+en.display+' speak does not match ground truth');
+    if(/[A-Z]/.test(en.speak)||/capital/i.test(en.speak))errors.push('English letter '+en.display+' may be spoken as capital: '+en.speak);
+  }
   if(HEBREW_LETTERS.length!==27)errors.push('Expected 27 Hebrew letter entries, got '+HEBREW_LETTERS.length);
   if(HEBREW_NUMBERS.length!==20)errors.push('Expected 20 Hebrew number entries, got '+HEBREW_NUMBERS.length);
-  return {passed:errors.length===0,total:HEBREW_LETTERS.length+HEBREW_NUMBERS.length,errors:errors};
+  if(ENGLISH_LETTERS.length!==26)errors.push('Expected 26 English letter entries, got '+ENGLISH_LETTERS.length);
+  return {passed:errors.length===0,total:HEBREW_LETTERS.length+HEBREW_NUMBERS.length+ENGLISH_LETTERS.length,errors:errors};
 }
 window.validatePronunciationGroundTruth=validatePronunciationGroundTruth;
 
@@ -520,7 +555,7 @@ for(var mi=0;mi<modeBtns.length;mi++){
   })(modeBtns[mi]);
 }
 
-function boot(){var v=validatePronunciationGroundTruth();if(v.passed){console.log('Pronunciation E2E validation passed:',v.total,'items');}else{console.error('Pronunciation E2E validation failed:',v.errors);}setMode(1);buildQueue();updateStats();updateProgress();newQuestion();}
+function boot(){var v=validatePronunciationGroundTruth();if(v.passed){console.log('Pronunciation E2E validation passed:',v.total,'items including no-capital English letter speech');}else{console.error('Pronunciation E2E validation failed:',v.errors);}setMode(1);buildQueue();updateStats();updateProgress();newQuestion();}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 </script>
 </body>
