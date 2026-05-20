@@ -10,29 +10,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Rubik:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-:root {
-  --bg: #0f0f23; --card: #1a1a3e; --ink: #ffffff; --sub: #a0aec0;
-  --m1: #f6c90e; --m2: #ff6b9d; --m3: #00d4aa; --border: rgba(255,255,255,0.12);
-  --opt: #1e2a4a; --red: #ef4444;
-}
-html, body { height: 100%; overflow: hidden; position: fixed; width: 100%; }
-body {
-  font-family: 'Nunito', sans-serif;
-  background: var(--bg); color: var(--ink);
-  height: 100vh; height: calc(var(--vh, 1vh) * 100);
-  display: flex; flex-direction: column;
-  padding: max(10px, env(safe-area-inset-top)) 10px max(10px, env(safe-area-inset-bottom)) 10px;
-}
-body::before {
-  content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
-  background-image:
-    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.6) 0%, transparent 100%),
-    radial-gradient(1px 1px at 30% 60%, rgba(255,255,255,0.4) 0%, transparent 100%),
-    radial-gradient(1px 1px at 70% 40%, rgba(255,255,255,0.3) 0%, transparent 100%),
-    radial-gradient(1px 1px at 90% 80%, rgba(255,255,255,0.5) 0%, transparent 100%),
-    radial-gradient(2px 2px at 60% 55%, rgba(246,201,14,0.4) 0%, transparent 100%),
-    radial-gradient(2px 2px at 25% 35%, rgba(0,212,170,0.3) 0%, transparent 100%);
-}
+:root { --bg:#0f0f23; --card:#1a1a3e; --ink:#ffffff; --sub:#a0aec0; --m1:#f6c90e; --m2:#ff6b9d; --m3:#00d4aa; --border:rgba(255,255,255,0.12); --opt:#1e2a4a; --red:#ef4444; }
+html,body { height:100%; overflow:hidden; position:fixed; width:100%; }
+body { font-family:'Nunito',sans-serif; background:var(--bg); color:var(--ink); height:100vh; height:calc(var(--vh,1vh)*100); display:flex; flex-direction:column; padding:max(10px,env(safe-area-inset-top)) 10px max(10px,env(safe-area-inset-bottom)) 10px; }
+body::before { content:''; position:fixed; inset:0; z-index:0; pointer-events:none; background-image: radial-gradient(1px 1px at 10% 20%,rgba(255,255,255,0.6) 0%,transparent 100%), radial-gradient(1px 1px at 70% 40%,rgba(255,255,255,0.3) 0%,transparent 100%), radial-gradient(2px 2px at 60% 55%,rgba(246,201,14,0.4) 0%,transparent 100%), radial-gradient(2px 2px at 25% 35%,rgba(0,212,170,0.3) 0%,transparent 100%); }
 .app { width:100%; max-width:520px; margin:0 auto; flex:1; display:flex; flex-direction:column; position:relative; z-index:1; min-height:0; gap:8px; }
 .header { display:flex; align-items:center; justify-content:space-between; flex-shrink:0; }
 .logo { font-family:'Rubik',sans-serif; font-weight:900; font-size:18px; letter-spacing:-0.5px; }
@@ -41,7 +22,6 @@ body::before {
 .stat { background:rgba(255,255,255,0.08); border:1px solid var(--border); border-radius:8px; padding:4px 8px; font-size:12px; font-weight:800; display:flex; align-items:center; gap:3px; }
 .stat.s-score { color:var(--m1); } .stat.s-streak { color:var(--m2); }
 .reset-btn { width:28px; height:28px; border-radius:50%; background:rgba(255,255,255,0.08); border:1px solid var(--border); color:var(--sub); font-size:14px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
-.reset-btn:active { opacity:0.6; }
 .mode-bar { display:flex; gap:5px; background:rgba(255,255,255,0.05); border:1px solid var(--border); border-radius:14px; padding:4px; flex-shrink:0; }
 .mode-btn { flex:1; padding:8px 4px; border:none; border-radius:11px; font-family:'Nunito',sans-serif; font-weight:800; font-size:11px; cursor:pointer; color:var(--sub); background:transparent; transition:all 0.2s; line-height:1.2; text-align:center; }
 .mode-btn.active { color:#000; }
@@ -61,10 +41,10 @@ body::before {
 .mode-3 .question-zone { background:linear-gradient(135deg,rgba(0,212,170,0.15),rgba(0,212,170,0.05)); border:1px solid rgba(0,212,170,0.3); }
 .q-label { font-size:10px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:10px; opacity:0.6; }
 .mode-1 .q-label { color:var(--m1); } .mode-2 .q-label { color:var(--m2); } .mode-3 .q-label { color:var(--m3); }
-.q-display { font-family:'Rubik',sans-serif; font-weight:900; font-size:clamp(32px,9vw,50px); line-height:1; margin-bottom:12px; }
-.mode-1 .q-display { color:var(--m1); direction:rtl; }
-.mode-2 .q-display { color:var(--m2); direction:ltr; }
-.mode-3 .q-display { color:var(--m3); font-size:clamp(26px,7vw,40px); direction:rtl; }
+.q-display { font-family:'Rubik',sans-serif; font-weight:900; font-size:clamp(32px,9vw,50px); line-height:1; margin-bottom:12px; direction:rtl; }
+.mode-2 .q-display { direction:ltr; color:var(--m2); }
+.mode-1 .q-display { color:var(--m1); }
+.mode-3 .q-display { color:var(--m3); font-size:clamp(26px,7vw,40px); }
 .speak-btn { display:inline-flex; align-items:center; gap:8px; padding:10px 22px; border-radius:999px; border:none; font-family:'Nunito',sans-serif; font-weight:800; font-size:13px; cursor:pointer; transition:transform 0.15s; box-shadow:0 4px 15px rgba(0,0,0,0.3); }
 .mode-1 .speak-btn { background:var(--m1); color:#000; }
 .mode-2 .speak-btn { background:var(--m2); color:#fff; }
@@ -107,7 +87,8 @@ body::before {
 .mode-3 .all-done .play-again { background:var(--m3); }
 .game-area { display:flex; flex-direction:column; flex:1; min-height:0; gap:8px; }
 .game-area.hide { display:none; }
-.cute-pop { position:fixed; pointer-events:none; z-index:999; top:-40px; line-height:1; }
+.cute-pop { position:fixed; pointer-events:none; z-index:999; top:0; user-select:none; overflow:visible; }
+.cute-pop svg { width:100%; height:100%; display:block; }
 @media (max-height:680px) { .q-display{font-size:28px;} .speak-btn{padding:8px 16px;font-size:12px;} .option{font-size:15px;} .mode-1 .option{font-size:18px;} }
 </style>
 </head>
@@ -130,7 +111,7 @@ body::before {
     <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
     <div class="game-area" id="gameArea">
       <div class="question-zone">
-        <div class="q-label" id="qLabel">Hear the letter &mdash; pick the Hebrew</div>
+        <div class="q-label" id="qLabel">Hear the letter — pick the Hebrew</div>
         <div class="q-display" id="qDisplay">?</div>
         <button class="speak-btn" id="speakBtn">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -160,98 +141,82 @@ var vh=function(){document.documentElement.style.setProperty('--vh',(window.inne
 vh();window.addEventListener('resize',vh);window.addEventListener('orientationchange',vh);
 
 var HEBREW_LETTERS=[
-  {display:'א',name:'Alef',he:'אלף',speak:'אלף'},
-  {display:'ב',name:'Bet',he:'בית',speak:'בית'},
-  {display:'ג',name:'Gimel',he:'גימל',speak:'גימל'},
-  {display:'ד',name:'Dalet',he:'דלת',speak:'דלת'},
-  {display:'ה',name:'He',he:'הא',speak:'הה'},
-  {display:'ו',name:'Vav',he:'ואו',speak:'ואו'},
-  {display:'ז',name:'Zayin',he:'זיין',speak:'זיין'},
-  {display:'ח',name:'Het',he:'חית',speak:'חית'},
-  {display:'ט',name:'Tet',he:'טית',speak:'טית'},
-  {display:'י',name:'Yod',he:'יוד',speak:'יוד'},
-  {display:'כ',name:'Kaf',he:'כף',speak:'כף'},
-  {display:'ל',name:'Lamed',he:'למד',speak:'למד'},
-  {display:'מ',name:'Mem',he:'מם',speak:'מם'},
-  {display:'נ',name:'Nun',he:'נון',speak:'נון'},
-  {display:'ס',name:'Samekh',he:'סמך',speak:'סמך'},
-  {display:'ע',name:'Ayin',he:'עין',speak:'עין'},
-  {display:'פ',name:'Pe',he:'פא',speak:'פא'},
-  {display:'צ',name:'Tsadi',he:'צדי',speak:'צדי'},
-  {display:'ק',name:'Qof',he:'קוף',speak:'קוף'},
-  {display:'ר',name:'Resh',he:'ריש',speak:'ריש'},
-  {display:'ש',name:'Shin',he:'שין',speak:'שין'},
-  {display:'ת',name:'Tav',he:'תוו',speak:'תוו'}
+  {display:'א',he:'אלף',speak:'אלף'},
+  {display:'ב',he:'בית',speak:'בית'},
+  {display:'ג',he:'גימל',speak:'גימל'},
+  {display:'ד',he:'דלת',speak:'דלת'},
+  {display:'ה',he:'הא',speak:'הה'},
+  {display:'ו',he:'ואו',speak:'ואו'},
+  {display:'ז',he:'זיין',speak:'זיין'},
+  {display:'ח',he:'חית',speak:'חית'},
+  {display:'ט',he:'טית',speak:'טית'},
+  {display:'י',he:'יוד',speak:'יוד'},
+  {display:'כ',he:'כף',speak:'כף'},
+  {display:'ך',he:'כף סופית',speak:'כף סופית'},
+  {display:'ל',he:'למד',speak:'למד'},
+  {display:'מ',he:'מם',speak:'מם'},
+  {display:'ם',he:'מם סופית',speak:'מם סופית'},
+  {display:'נ',he:'נון',speak:'נון'},
+  {display:'ן',he:'נון סופית',speak:'נון סופית'},
+  {display:'ס',he:'סמך',speak:'סמך'},
+  {display:'ע',he:'עין',speak:'עין'},
+  {display:'פ',he:'פא',speak:'פא'},
+  {display:'ף',he:'פא סופית',speak:'פא סופית'},
+  {display:'צ',he:'צדי',speak:'צדי'},
+  {display:'ץ',he:'צדי סופית',speak:'צדי סופית'},
+  {display:'ק',he:'קוף',speak:'קוף'},
+  {display:'ר',he:'ריש',speak:'ריש'},
+  {display:'ש',he:'שין',speak:'שין'},
+  {display:'ת',he:'תוו',speak:'תוו'}
 ];
 
-var ENGLISH_LETTERS='ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(function(c){return{display:c,name:c};});
+var ENGLISH_LETTERS='ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(function(c){return{display:c,name:c,speak:c};});
 
 var HEBREW_NUMBERS=[
-  {num:1,he:'אֶחָד',display:'1'},
-  {num:2,he:'שְתַּיִם',display:'2'},
-  {num:3,he:'שָלוֹשׁ',display:'3'},
-  {num:4,he:'אַרְבַּע',display:'4'},
-  {num:5,he:'חָמֵשׁ',display:'5'},
-  {num:6,he:'שֵשׁ',display:'6'},
-  {num:7,he:'שֶבַע',display:'7'},
-  {num:8,he:'שְמוֹנֶה',display:'8'},
-  {num:9,he:'תֵּשַׁע',display:'9'},
-  {num:10,he:'עֶשֶׂר',display:'10'},
-  {num:11,he:'אַחַד עָשָׂר',display:'11'},
-  {num:12,he:'שְנֵים עָשָׂר',display:'12'},
-  {num:13,he:'שְלוֹשָׁה עָשָׂר',display:'13'},
-  {num:14,he:'אַרְבָּעָה עָשָׂר',display:'14'},
-  {num:15,he:'חֲמִישָׁה עָשָׂר',display:'15'},
-  {num:16,he:'שִׁשָּה עָשָׂר',display:'16'},
-  {num:17,he:'שִׁבְעָה עָשָׂר',display:'17'},
-  {num:18,he:'שְמוֹנָה עָשָׂר',display:'18'},
-  {num:19,he:'תִּשְׁעָה עָשָׂר',display:'19'},
-  {num:20,he:'עֶשְׂרִים',display:'20'}
+  {num:1, he:'אחד',speak:'אחד',display:'1'},
+  {num:2, he:'שתיים',speak:'שתיים',display:'2'},
+  {num:3, he:'שלוש',speak:'שלוש',display:'3'},
+  {num:4, he:'ארבע',speak:'ארבע',display:'4'},
+  {num:5, he:'חמש',speak:'חמש',display:'5'},
+  {num:6, he:'שש',speak:'שש',display:'6'},
+  {num:7, he:'שבע',speak:'שבע',display:'7'},
+  {num:8, he:'שמונה',speak:'שמונה',display:'8'},
+  {num:9, he:'תשע',speak:'תשע',display:'9'},
+  {num:10,he:'עשר',speak:'עשר',display:'10'},
+  {num:11,he:'אחד עשר',speak:'אחד עשר',display:'11'},
+  {num:12,he:'שתיים עשר',speak:'שתיים עשר',display:'12'},
+  {num:13,he:'שלושה עשר',speak:'שלושה עשר',display:'13'},
+  {num:14,he:'ארבעה עשר',speak:'ארבעה עשר',display:'14'},
+  {num:15,he:'חמישה עשר',speak:'חמישה עשר',display:'15'},
+  {num:16,he:'שישה עשר',speak:'שישה עשר',display:'16'},
+  {num:17,he:'שבעה עשר',speak:'שבעה עשר',display:'17'},
+  {num:18,he:'שמונה עשר',speak:'שמונה עשר',display:'18'},
+  {num:19,he:'תשעה עשר',speak:'תשעה עשר',display:'19'},
+  {num:20,he:'עשרים',speak:'עשרים',display:'20'}
 ];
 
 var PRAISE=[
-  'יופי! 🌟',
-  'אתה גאון! 🤩',
-  'וואו! 🥳',
-  'נייס! 👏',
-  'כל הכבוד! 🏆',
-  'מדהים! 🚀',
-  'בראבו! 💪',
-  'אחלה! 😍',
-  'עצום! ⭐',
-  'איזה כיף! 🎈',
-  'ממשיך! 👍',
-  'בראבו! 🎉',
-  'אתה סופרסטאר! 🦄',
-  'איזה חכמון! 🧠',
-  'פנטסטי! 🌈',
-  'אתה מדהים! 💎',
-  'הצלחת! 🍓',
-  'עבודה יפה! 🌟',
-  'כוכב! 💫',
-  'אתה הכי טוב! 👑',
-  'מצוין! 🍏',
-  'איזה שיא! 💃',
-  'אתה מקצוען! 🔥',
-  'מושלם! 🤩',
-  'הלוחם! 🥷'
+  'יופי! 🌟','אתה גאון! 🤩','וואו! 🥳',
+  'נייס! 👏','כל הכבוד! 🏆','מדהים! 🚀',
+  'בראבו! 💪','אחלה! 😍','עצום! ⭐',
+  'איזה כיף! 🎈','ממשיך! 👍','בראבו! 🎉',
+  'אתה סופרסטאר! 🦄','איזה חכמון! 🧠',
+  'פנטסטי! 🌈','אתה מדהים! 💎',
+  'הצלחת! 🍓','עבודה יפה! 🌟',
+  'כוכב! 💫','אתה הכי טוב! 👑',
+  'מצוין! 🍏','איזה שיא! 💃',
+  'אתה מקצוען! 🔥','מושלם! 🤩','הלוחם! 🥷'
 ];
+var ENCOURAGE=['נסה שוב!','כמעט!','בוא, תוכל!','כל כך!'];
 
-var ENCOURAGE=[
-  'נסה שוב!',
-  'כמעט!',
-  'בוא, תוכל!',
-  'כל כך!'
-];
-
-var CUTE=[
-  '🐱','🐈','🐶','🦄',
+var CUTE_LIST=[
+  '🐱','🐈','🐶','🦄','😸',
   '🌸','🌹','🌺','🌷','🍀',
-  '👼','⭐','🌈',
-  '💜','💛','💙','💚',
-  '🍓','🍒','🐕','🐾','🧸'
+  '👼','⭐','🌈','🌟','💫',
+  '💜','💙','💚','💛','🧸'
 ];
-var SPECIAL=['🐇','🐩'];
+var POODLE='🐩';
+var BUNNY_SVG='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 82"><ellipse cx="30" cy="64" rx="18" ry="15" fill="#111" stroke="white" stroke-width="2.5"/><ellipse cx="30" cy="40" rx="14" ry="13" fill="#111" stroke="white" stroke-width="2.5"/><ellipse cx="21" cy="13" rx="5" ry="14" fill="#111" stroke="white" stroke-width="2.5"/><ellipse cx="21" cy="13" rx="2.5" ry="10" fill="#ff9aa2"/><ellipse cx="39" cy="13" rx="5" ry="14" fill="#111" stroke="white" stroke-width="2.5"/><ellipse cx="39" cy="13" rx="2.5" ry="10" fill="#ff9aa2"/><circle cx="24" cy="37" r="3.5" fill="white"/><circle cx="24" cy="37" r="2" fill="#1a1a1a"/><circle cx="24.8" cy="36.2" r="0.8" fill="white"/><circle cx="36" cy="37" r="3.5" fill="white"/><circle cx="36" cy="37" r="2" fill="#1a1a1a"/><circle cx="36.8" cy="36.2" r="0.8" fill="white"/><ellipse cx="30" cy="43" rx="2.5" ry="1.8" fill="#ff9aa2"/><path d="M27.5 45 Q30 47.5 32.5 45" stroke="white" stroke-width="1.2" fill="none" stroke-linecap="round"/><circle cx="47" cy="65" r="6" fill="#2a2a2a" stroke="white" stroke-width="1.5"/></svg>';
 var cuteCounter=0;
 
 var currentMode=1,score=0,streak=0,queue=[],mastered={},answered=false,wrongThisRound=false,currentItem=null;
@@ -277,59 +242,55 @@ function loadVoices(){voices=window.speechSynthesis?window.speechSynthesis.getVo
 if(window.speechSynthesis){loadVoices();window.speechSynthesis.onvoiceschanged=loadVoices;}
 function findVoice(lang){for(var i=0;i<voices.length;i++)if(voices[i].lang&&voices[i].lang.indexOf(lang)===0)return voices[i];return null;}
 function speak(text,lang,doneCb){if(!window.speechSynthesis){if(doneCb)doneCb();return;}window.speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(text);u.lang=lang;u.rate=0.82;u.pitch=1.05;var v=findVoice(lang==='he-IL'?'he':'en');if(v)u.voice=v;u.onend=function(){if(doneCb)doneCb();};u.onerror=function(){if(doneCb)doneCb();};window.speechSynthesis.speak(u);}
-function speakCurrent(){if(!currentItem)return;speakBtn.classList.add('speaking');var done=function(){speakBtn.classList.remove('speaking');};if(currentMode===1)speak(currentItem.speak,'he-IL',done);else if(currentMode===2)speak(currentItem.name,'en-US',done);else speak(currentItem.speak,'he-IL',done);}
+function speakCurrent(){if(!currentItem)return;speakBtn.classList.add('speaking');var done=function(){speakBtn.classList.remove('speaking');};if(currentMode===1)speak(currentItem.speak,'he-IL',done);else if(currentMode===2)speak(currentItem.speak,'en-US',done);else speak(currentItem.speak,'he-IL',done);}
 
-function fireConfetti(n){
-  var colors=['#f6c90e','#ff6b9d','#00d4aa','#818cf8','#22c55e','#3b82f6','#f97316','#ec4899','#a78bfa','#34d399'];
-  var total=n||24;
-  for(var i=0;i<total;i++){
-    (function(idx){
-      setTimeout(function(){
-        var p=document.createElement('div');
-        p.style.cssText='position:fixed;pointer-events:none;z-index:998;top:-16px;width:'+(8+Math.random()*8)+'px;height:'+(8+Math.random()*10)+'px;background:'+colors[Math.floor(Math.random()*colors.length)]+';border-radius:'+(Math.random()>0.5?'50%':'2px')+';left:'+(Math.random()*96+2)+'vw;';
-        document.body.appendChild(p);
-        var dur=1400+Math.random()*1200;
-        var drift=(Math.random()-0.5)*200;
-        var rot=Math.random()*720;
-        p.animate([
-          {transform:'translate(0,0) rotate(0deg)',opacity:1},
-          {transform:'translate('+drift+'px,'+(window.innerHeight+30)+'px) rotate('+rot+'deg)',opacity:0}
-        ],{duration:dur,easing:'cubic-bezier(.5,.1,.5,1)'});
-        setTimeout(function(){p.remove();},dur);
-      },idx*40);
-    })(i);
+function dropOne(emoji,isSvg,colorFilter,big){
+  var p=document.createElement('div');
+  p.className='cute-pop';
+  var sz=big?(44+Math.random()*16):(24+Math.random()*12);
+  p.style.left=(Math.random()*86+2)+'vw';
+  p.style.top=(-sz*1.5)+'px';
+  if(isSvg){
+    p.style.width=sz+'px';
+    p.style.height=(sz*1.4)+'px';
+    p.innerHTML=BUNNY_SVG;
+  }else{
+    p.style.width=sz+'px';
+    p.style.height=sz+'px';
+    p.style.fontSize=sz+'px';
+    p.style.lineHeight='1';
+    if(colorFilter)p.style.filter=colorFilter;
+    p.textContent=emoji;
   }
-}
-
-function fireCuteShower(n){
-  var total=n||20;
-  for(var i=0;i<total;i++){
-    (function(idx){
-      setTimeout(function(){
-        cuteCounter++;
-        var p=document.createElement('div');
-        p.className='cute-pop';
-        p.style.left=(Math.random()*88+2)+'vw';
-        var isSpecial=(cuteCounter%3===0);
-        p.style.fontSize=isSpecial?(34+Math.random()*14)+'px':(20+Math.random()*16)+'px';
-        p.textContent=isSpecial?SPECIAL[Math.floor(Math.random()*SPECIAL.length)]:CUTE[Math.floor(Math.random()*CUTE.length)];
-        document.body.appendChild(p);
-        var dur=1800+Math.random()*1200;
-        var drift=(Math.random()-0.5)*160;
-        var rot=(Math.random()-0.5)*400;
-        p.animate([
-          {transform:'translate(0,0) rotate(0deg) scale('+(isSpecial?1.4:1)+')',opacity:1},
-          {transform:'translate('+drift+'px,'+(window.innerHeight+60)+'px) rotate('+rot+'deg) scale(0.4)',opacity:0}
-        ],{duration:dur,easing:'ease-in'});
-        setTimeout(function(){p.remove();},dur);
-      },idx*65);
-    })(i);
-  }
+  document.body.appendChild(p);
+  var dur=2100+Math.random()*1100;
+  var drift=(Math.random()-0.5)*120;
+  var rot=(Math.random()-0.5)*340;
+  p.animate([
+    {transform:'translateY(0) translateX(0) rotate(0deg) scale('+(big?1.25:1)+')',opacity:1},
+    {transform:'translateY('+(window.innerHeight+sz+50)+'px) translateX('+drift+'px) rotate('+rot+'deg) scale(0.2)',opacity:0}
+  ],{duration:dur,easing:'ease-in',fill:'forwards'});
+  setTimeout(function(){if(p.parentNode)p.parentNode.removeChild(p);},dur+100);
 }
 
 function fireCute(n){
-  fireConfetti(n||24);
-  fireCuteShower(n||20);
+  cuteCounter++;
+  var count=n||18;
+  var isSvg=false,emoji=null,filter=null,big=false;
+  if(cuteCounter%5===0){
+    isSvg=true; big=true;
+  }else if(cuteCounter%3===0){
+    emoji=POODLE;
+    filter='sepia(1) saturate(3) hue-rotate(340deg) brightness(0.7)';
+    big=true;
+  }else{
+    emoji=CUTE_LIST[Math.floor(Math.random()*CUTE_LIST.length)];
+  }
+  for(var i=0;i<count;i++){
+    (function(idx){
+      setTimeout(function(){dropOne(emoji,isSvg,filter,big);},idx*72);
+    })(i);
+  }
 }
 
 var appEl=document.querySelector('.app');
@@ -427,7 +388,7 @@ function handleAnswer(btn,chosen,correct){
 
 function showAllDone(){
   gameArea.classList.add('hide');allDone.classList.add('show');
-  allDoneSub.textContent=currentMode===1?'ידעת את כל האותיות!':currentMode===2?'You know all the letters!':'ידעת את המספרים 20-1!';
+  allDoneSub.textContent=currentMode===1?'ידעת את כל האותיות!':currentMode===2?'You know all the letters!':'ידעת את המספרים 1-20!';
   fireCute(60);setTimeout(function(){fireCute(60);},500);
   playMastery();
 }
